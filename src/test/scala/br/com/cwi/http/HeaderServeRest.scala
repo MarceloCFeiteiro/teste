@@ -1,10 +1,8 @@
 package br.com.cwi.http
 
-import br.com.cwi.utils.SessionKeys
-
 object HeaderServeRest {
   val authorization = Map(
-    "Authorization" ->   s"${SessionKeys.bearer_token}"
+    "Authorization" -> "${bearer_token}"
   )
   val content_type_json = Map(
     "Content-Type" -> "application/json"

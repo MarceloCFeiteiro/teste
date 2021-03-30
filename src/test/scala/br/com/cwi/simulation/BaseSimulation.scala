@@ -19,15 +19,9 @@ class BaseSimulation extends Simulation {
 
   def maxDuration: Int = Utils.getProperty("LT_MAX_DURATION", "2").toInt
 
-  Config.uris.clientId = Utils.getProperty("LT_CLIENT_ID", "")
-  Config.uris.webAppBaseUri = Utils.getProperty("LT_WEB_APP_BASE_URI", "https://web-app.azurewebsites.net/")
-  Config.uris.b2cLoginUri = Utils.getProperty("LT_B2C_LOGIN_URI", "https://b2c.b2clogin.com/tfp/b2c.onmicrosoft.com/B2C_1_ROPC/")
-  Config.uris.apiBaseUri = Utils.getProperty("LT_API_BASE_URI", "http://54.87.160.50:8000/api")
-  Config.uris.ocpApimSubscriptionKey = Utils.getProperty("LT_OCP_APIM_SUBSCRIPTION_KEY", "80b7c3")
   Config.data.usuariosCsv = Utils.getProperty("LT_USUARIOS_CSV", "data/usuarios.csv")
   Config.data.cartoesCsv = Utils.getProperty("LT_CARTOES_CREDITO_CSV", "data/cartoes-credito.csv")
 
-  Config.uris.authurl = Utils.getProperty("LT_AUTHURL", "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyD0bL8l4l6O7Gfb5bmdA5z7z0whywRsZD4")
   Config.uris.apiserveRest = Utils.getProperty("LT_URLAPISERVEREST", "https://serverest.dev")
 
 
@@ -41,20 +35,15 @@ class BaseSimulation extends Simulation {
     println(s" - Usuários constantes por ${rampDuration} segundos")
     println(s" - Duração máxima: ${maxDuration} hora(s)")
     println(s"URIs")
-    println(s" - Client Id : ${Config.uris.clientId}")
-    println(s" - Web APP : ${Config.uris.webAppBaseUri}")
-    println(s" - B2C Login : ${Config.uris.b2cLoginUri}")
-    println(s" - API base URI : ${Config.uris.apiBaseUri}")
-    println(s" - OCP API Subscription Key : ${Config.uris.ocpApimSubscriptionKey}")
+    println(s" - Client Id : ${Config.uris.apiserveRest}")
     println(s"Dados")
     println(s" - Usuários : ${Config.data.usuariosCsv}")
-    println(s" - Cartões Crédito : ${Config.data.cartoesCsv}")
-    println(s"${SessionKeys.bearer_token}")
+    println("${bearer_token}")
     println("================================================================================")
   }
 
   after {
-    println(s"${SessionKeys.bearer_token}")
+    println("${bearer_token}")
     println("Simulação finalizada")
   }
 }

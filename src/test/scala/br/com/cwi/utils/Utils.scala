@@ -62,13 +62,4 @@ object Utils extends StrictLogging {
       .getOrElse(defaultValue)
   }
 
-  def getAuthorization(session: Session): String = {
-    ADClient.acquireTokenUsernamePassword(
-      getKey(session, "user"),
-      getKey(session, "pass"),
-      Config.uris.b2cLoginUri,
-      Config.uris.clientId,
-      Config.uris.clientId
-    ).accessToken()
-  }
 }

@@ -10,7 +10,7 @@ import br.com.cwi.utils._
 object Http {
 
   val httpProtocol = http
-    .baseUrls(Config.uris.webAppBaseUri)
+    .baseUrls(Config.uris.apiserveRest)
     .inferHtmlResources()
     .acceptHeader("image/webp,*/*")
     .contentTypeHeader("application/json")

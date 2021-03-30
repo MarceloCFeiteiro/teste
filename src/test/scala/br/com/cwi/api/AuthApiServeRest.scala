@@ -1,6 +1,6 @@
 package br.com.cwi.api
 
-import br.com.cwi.http.{Header, HeaderServeRest}
+import br.com.cwi.http.HeaderServeRest
 import br.com.cwi.utils.{Config, SessionKeys, Utils}
 import io.gatling.core.Predef.{exec, _}
 import io.gatling.http.Predef.{http, _}
@@ -27,4 +27,26 @@ object ApiServRest{
       )
       .pause(Config.pausa.processamento_resposta)
   }
+
+  /**
+  * Executa o logout do usuário.
+    *
+  * @note
+  * Utiliza o bearer token armazenado em sessão para a chamada e então remove a chave da sessão.
+  */
+//  def logout() = {
+//    exec(
+//      http("auth api: logout")
+//        .post(Config.uris.apiBaseUri.concat("/auth/logout/"))
+//        .headers(Header.api_key)
+//        .headers(Header.authorization)
+//        .headers(Header.accepted_language_en)
+//        .headers(Header.accept_application_json)
+//        .headers(Header.content_type_application_json)
+//    )
+//      .exec(session => {
+//        session.set(SessionKeys.bearer_token, null)
+//      })
+//      .pause(Config.pausa.processamento_resposta)
+//  }
 }

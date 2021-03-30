@@ -7,15 +7,6 @@ object Config {
   object uris {
     val microsoftOnlineLogin = "https://login.microsoftonline.com/"
 
-    var clientId = ""
-    var webAppBaseUri = ""
-    var b2cLoginUri = ""
-    var apiBaseUri = ""
-    var ocpApimSubscriptionKey = ""
-
-    var authurl = ""
-    var urlwtp = ""
-
     var apiserveRest = ""
 
   }
