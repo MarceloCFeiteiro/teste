@@ -1,0 +1,4 @@
+br\com\cwi\ADClientTest.class
+br\com\cwi\TokenCacheAspect.class
+br\com\cwi\utils\GeraCpfCnpj.class
+br\com\cwi\ADClient.class

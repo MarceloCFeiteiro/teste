@@ -1,0 +1,10 @@
+{
+  "simulation": "br.com.cwi.simulation.LoadTestSimulation",
+  "simulationId": "loadtestsimulation",
+  "start": 1617125899735,
+  "description": "",
+  "scenarios": ["Simulação completa"],
+  "assertions": [
+
+  ]
+}
