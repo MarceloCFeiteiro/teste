@@ -1,7 +1,0 @@
-RUN	br.com.cwi.simulation.LoadTestSimulation	loadtestsimulation	1617130742000	 	3.3.1
-USER	Simulação completa	1	START	1617130746087	1617130746087
-REQUEST	1	Cenário de acesso ao sistema,Fluxo de acesso ao sistema	Api serveRest	1617130751187	1617130751462	OK	 
-REQUEST	1	Cenário de acesso ao sistema,Fluxo de acesso ao sistema	Api Cadastro produto	1617130751830	1617130751865	KO	status.find.in(200,201,202,204), but actually found 400
-GROUP	1	Cenário de acesso ao sistema,Fluxo de acesso ao sistema	1617130746109	1617130752214	310	KO
-GROUP	1	Cenário de acesso ao sistema	1617130746103	1617130752215	310	KO
-USER	Simulação completa	1	END	1617130746087	1617130752226

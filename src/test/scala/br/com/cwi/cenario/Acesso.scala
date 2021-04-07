@@ -1,6 +1,6 @@
 package br.com.cwi.cenario
 
-import br.com.cwi.api.{ApiProdutos, _}
+import br.com.cwi.api._
 import io.gatling.core.Predef.{exec, _}
 
 /**
@@ -11,13 +11,13 @@ import io.gatling.core.Predef.{exec, _}
  */
 object Acesso {
 
-  private[cenario] def loginApiSeverRest() = {
-    exec(ApiServRest.login(),
-      ApiProdutos.CadastrarProduto())
+  private[cenario] def AcessoAoSistema() = {
+    exec(ApiServRest.login())
   }
 
   val cenarioLoginAcessoApiServRest = scenario("Cenário de acesso de login na api server rest")
     .group("Fluxo de acesso ao sistema") {
-      exec(loginApiSeverRest())
+      exec(AcessoAoSistema())
     }
+
 }

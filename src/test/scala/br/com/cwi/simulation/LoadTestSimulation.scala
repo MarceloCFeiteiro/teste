@@ -11,12 +11,11 @@ class LoadTestSimulation extends BaseSimulation {
 
   val scenarios = Map (
     "ramp" -> List(
-      Simulacao.completa.inject(rampUsers(userCount) during (rampDuration seconds))
+      Simulacao.ListarUmProduto.inject(rampUsers(userCount) during (rampDuration seconds))
     ),
     "constants" -> List(
-      Simulacao.completa.inject(constantUsersPerSec(userCount) during (constantDuration seconds))
-    ),
+      Simulacao.ListarUmProduto.inject(constantUsersPerSec(userCount) during (constantDuration seconds))
+    )
   )
-
   setUp(scenarios(scn):_*).protocols(Http.httpProtocol).maxDuration(maxDuration hours)
 }

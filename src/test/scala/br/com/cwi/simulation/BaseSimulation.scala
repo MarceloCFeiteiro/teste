@@ -1,6 +1,7 @@
 package br.com.cwi.simulation
 
-import br.com.cwi.utils.{Config, SessionKeys, Utils}
+import br.com.cwi.model.Produto
+import br.com.cwi.utils.{Config, ConversorJson, SessionKeys, Utils, EscreveArquivo}
 import io.gatling.core.Predef._
 
 /**
@@ -26,6 +27,7 @@ class BaseSimulation extends Simulation {
 
 
   before {
+    EscreveArquivo.salvaArquivo(ConversorJson.EntidadeParaJson(Produto.criaProduto()))
     println("================================================================================")
     println("Iniciando os testes de carga, utilizando as seguintes configurações:")
     println(s"Execução")
@@ -38,12 +40,10 @@ class BaseSimulation extends Simulation {
     println(s" - Client Id : ${Config.uris.apiserveRest}")
     println(s"Dados")
     println(s" - Usuários : ${Config.data.usuariosCsv}")
-    println("${bearer_token}")
     println("================================================================================")
   }
 
   after {
-    println("${bearer_token}")
     println("Simulação finalizada")
   }
 }
