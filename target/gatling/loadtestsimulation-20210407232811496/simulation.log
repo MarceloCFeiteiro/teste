@@ -1,0 +1,10 @@
+RUN	br.com.cwi.simulation.LoadTestSimulation	loadtestsimulation	1617838091496	 	3.3.1
+USER	Listar um produto cadastrado	1	START	1617838096515	1617838096515
+REQUEST	1	Cenário para a listagem um produto cadastrado,Fluxo de acesso ao sistema	Api serveRest	1617838101676	1617838102018	OK	 
+GROUP	1	Cenário para a listagem um produto cadastrado,Fluxo de acesso ao sistema	1617838096557	1617838102387	342	OK
+REQUEST	1	Cenário para a listagem um produto cadastrado,Cadastro de produto	Api Cadastro produto	1617838102396	1617838102435	OK	 
+GROUP	1	Cenário para a listagem um produto cadastrado,Cadastro de produto	1617838102388	1617838102794	39	OK
+REQUEST	1	Cenário para a listagem um produto cadastrado,Visualização de dados	Api Listar Produtos Cadastrados	1617838102795	1617838102830	OK	 
+GROUP	1	Cenário para a listagem um produto cadastrado,Visualização de dados	1617838102794	1617838103154	35	OK
+GROUP	1	Cenário para a listagem um produto cadastrado	1617838096545	1617838103154	416	OK
+USER	Listar um produto cadastrado	1	END	1617838096515	1617838103162

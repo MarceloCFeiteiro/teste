@@ -1,0 +1,10 @@
+{
+  "simulation": "br.com.cwi.simulation.LoadTestSimulation",
+  "simulationId": "loadtestsimulation",
+  "start": 1617838091496,
+  "description": "",
+  "scenarios": ["Listar um produto cadastrado"],
+  "assertions": [
+
+  ]
+}
