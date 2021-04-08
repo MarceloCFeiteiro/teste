@@ -24,6 +24,20 @@ object ApiProdutos {
       .pause(Config.pausa.processamento_resposta)
   }
 
+  def EditarPodutoPorId(): ChainBuilder = {
+    exec(
+      http("Api Editar Produto por Id.")
+        .put(Config.uris.apiserveRest.concat("/produtos").concat("/${idProduto}"))
+        .headers(HeaderServeRest.authorization)
+        .headers(HeaderServeRest.accept)
+        .headers(HeaderServeRest.host)
+        .headers(HeaderServeRest.connection)
+        .body(ElFileBody("bodies/login/produtoAlterado.json"))
+        .check(status is 200)
+    )
+      .pause(Config.pausa.processamento_resposta)
+  }
+
   def ListarProdutosCadastrados(): ChainBuilder = {
     exec(
       http("Api Listar Produtos Cadastrados")
@@ -45,6 +59,9 @@ object ApiProdutos {
         .headers(HeaderServeRest.connection)
         .check(status is 200)
     )
+      .pause(Config.pausa.processamento_resposta)
   }
+
+
 
 }

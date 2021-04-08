@@ -50,4 +50,15 @@ object Simulacao {
     .exec {
       Utils.printSessionAttributes()
     }
+
+  val EditarUmProduto = scenario("Editar um produto cadastrado")
+    .feed(csv(Config.data.usuariosCsv).random.circular)
+    .group("Cenário para a Edição um produto cadastrado") {
+      exec(Acesso.cenarioLoginAcessoApiServRest)
+        .exec(CadastroDeProduto.cenarioCadastrarProduto)
+        .exec(EditarProduto.cenarioEditarProduto)
+    }
+    .exec {
+      Utils.printSessionAttributes()
+    }
 }

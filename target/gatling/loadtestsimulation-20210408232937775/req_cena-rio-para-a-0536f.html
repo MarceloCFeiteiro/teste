@@ -17,7 +17,7 @@
 <script type="text/javascript" src="js/highcharts-more.js"></script>
 <script type="text/javascript" src="js/theme.js"></script>
 <script type="text/javascript" src="js/unpack.js"></script>
-<title>Gatling Stats - Cenário para a listagem um produto cadastrado</title>
+<title>Gatling Stats - Cenário para a Edição um produto cadastrado / Cadastro de produto / Api Cadastro produto</title>
 </head>
 <body>
 <div class="frise"></div>
@@ -37,15 +37,15 @@
                         <div class="item "><a href="index.html">GLOBAL</a></div>
                         <div class="item ouvert"><a id="details_link" href="#">DETAILS</a></div>
                         <script type="text/javascript">
-                          var timestamp = 1617838091496;
+                          var timestamp = 1617924577775;
                           var runStartHumanDate = moment(timestamp).format("YYYY-MM-DD HH:mm:ss Z");
-                          document.writeln("<p class='sim_desc' title='"+ runStartHumanDate +", duration : 11 seconds' data-content=''>");
-                          document.writeln("<b>" + runStartHumanDate + ", duration : 11 seconds </b>");
+                          document.writeln("<p class='sim_desc' title='"+ runStartHumanDate +", duration : 9 seconds' data-content=''>");
+                          document.writeln("<b>" + runStartHumanDate + ", duration : 9 seconds </b>");
                           document.writeln("</p>");
                         </script>
                     </div>
                     <div class="content-in">
-                        <h1><span>> </span>Cenário para a listagem um produto cadastrado</h1>
+                        <h1><span>> </span>Cenário para a Edição um produto cadastrado / Cadastro de produto / Api Cadastro produto</h1>
                         <div class="article">
                             
                         <div class="infos">
@@ -143,19 +143,25 @@
             </div>
 
             <div class="schema geant">
-              <div id="cumulatedResponseTimeChartContainer" class="geant"></div>
+              <div id="container_distrib" class="geant"></div>
             </div>
 
             <div class="schema geant">
-              <div id="cumulatedResponseTimeDistributionContainer" class="geant"></div>
+              <div id="container" class="geant"></div>
             </div>
 
             <div class="schema geant">
-              <div id="durationContainer" class="geant"></div>
+              <a name="requests"></a>
+                <div id="container_requests" class="geant"></div>
             </div>
 
             <div class="schema geant">
-              <div id="durationDistributionContainer" class="geant"></div>
+              <a name="responses"></a>
+                <div id="container_responses" class="geant"></div>
+            </div>
+
+            <div class="schema geant">
+              <div id="container_response_time_dispersion" class="geant"></div>
             </div>
 
                         </div>
@@ -168,7 +174,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    var pageStats = stats.contents['group_cena-rio-para-a-c1d18'].stats;
+    var pageStats = stats.contents['group_cena-rio-para-a-473d9'].contents['group_cadastro-de-pro-09766'].contents['req_api-cadastro-pr-c15bb'].stats;
     $(document).ready(function() {
         $('.sim_desc').popover({trigger:'hover', placement:'bottom'});
         setDetailsLinkUrl();
@@ -276,11 +282,82 @@ indicatorsChart.setTitle({
 
 	    $('#container_errors').sortable('#container_errors');
     
-var responseTimePercentiles = unpack([[1617838097,[416,416,416,416,416,416,416,416,416,416]],[1617838098,null],[1617838099,null],[1617838100,null],[1617838101,null],[1617838102,null],[1617838103,null]]);
+var responseTimeDistributionChart = new Highcharts.Chart({
+  chart: {
+    renderTo: 'container_distrib',
+    type: 'column'
+  },
+  credits: {
+    enabled: false
+  },
+  legend: {
+    enabled: true,
+    floating: true,
+    y: -285,
+    borderWidth: 0,
+    itemStyle: {
+      fontWeight: "normal"
+    }
+  },
+  title: {
+    text: 'A title to let highcharts reserve the place for the title set later'
+  },
+  xAxis: {
+    categories: ['42'],
+    tickInterval: 20
+  },
+  yAxis: {
+    min: 0,
+    title: {
+      text: 'Percentage of Requests'
+    }
+  },
+  tooltip: {
+    formatter: function() {
+      return '<b>'+ this.x +' ms</b><br/>'+
+      this.series.name +': '+ this.y +' %<br/>'+
+      'Total: '+ this.point.stackTotal + ' %';
+    }
+  },
+  plotOptions: {
+    series: {
+      groupPadding: 0,
+      stacking: 'normal',
+      shadow: true
+    }
+  },
+  series: [
+  	{
+type: 'column',
+color: '#4572A7',
+name: 'OK',
+data: [
+  100.0
+],
+tooltip: { yDecimals: 0, ySuffix: 'ms' }
+},
+  	{
+type: 'column',
+color: '#FF0000',
+name: 'KO',
+data: [
+  
+],
+tooltip: { yDecimals: 0, ySuffix: 'ms' }
+}
+  ]
+});
+
+responseTimeDistributionChart.setTitle({
+  text: '<span class="chart_title">Response Time Distribution</span>',
+  useHTML: true
+});
+
+var responseTimePercentiles = unpack([[1617924581,null],[1617924582,null],[1617924583,null],[1617924584,null],[1617924585,null],[1617924586,null],[1617924587,[42,42,42,42,42,42,42,42,42,42]]]);
 
 var responseTimeChart = new Highcharts.StockChart({
   chart: {
-    renderTo: 'cumulatedResponseTimeChartContainer',
+    renderTo: 'container',
     zoomType: 'x'
   },
   colors: ['#C4FD90', '#7FF77F', '#6FF2AD', '#60ECE5', '#51A8E7', '#4353E2', '#7335DC', '#BC28D7', '#D11C97', '#C73905', 'Orange'],
@@ -350,7 +427,7 @@ var responseTimeChart = new Highcharts.StockChart({
     {
       min: 0,
       title: {
-        text: 'Cumulated Response Time (ms)',
+        text: 'Response Time (ms)',
         style: { color: '#4572A7' }
       },
       opposite: false
@@ -467,93 +544,28 @@ zIndex: 1
 });
 
 responseTimeChart.setTitle({
-  text: '<span class="chart_title chart_title_">Group Cumulated Response Time Percentiles over Time (success)</span>',
+  text: '<span class="chart_title chart_title_">Response Time Percentiles over Time (OK)</span>',
   useHTML: true
 });
 
-var responseTimeDistributionChart = new Highcharts.Chart({
+var container_requests = unpack([[1617924581,[0,0, 0]],[1617924582,[0,0, 0]],[1617924583,[0,0, 0]],[1617924584,[0,0, 0]],[1617924585,[0,0, 0]],[1617924586,[0,0, 0]],[1617924587,[1,0, 1]]]);
+
+var requestsChart = new Highcharts.StockChart({
   chart: {
-    renderTo: 'cumulatedResponseTimeDistributionContainer',
-    type: 'column'
+    renderTo: 'container_requests',
+    zoomType: 'x'
   },
   credits: { enabled: false },
   legend: {
     enabled: true,
     floating: true,
+    itemDistance: 10,
     y: -285,
     borderWidth: 0,
     itemStyle: { fontWeight: "normal" }
   },
   title: { text: 'A title to let highcharts reserve the place for the title set later' },
-  xAxis: {
-    categories: ['416'],
-    tickInterval: 20
-  },
-  yAxis: {
-    min: 0,
-    title: { text: 'Percentage of Requests' }
-  },
-  tooltip: {
-    formatter: function() {
-      return '<b>'+ this.x +' ms</b><br/>'+
-      this.series.name +': '+ this.y +' %<br/>'+
-      'Total: '+ this.point.stackTotal + ' %';
-    }
-  },
-  plotOptions: {
-    series: {
-      groupPadding: 0,
-      stacking: 'normal',
-	    shadow: true
-    }
-  },
-  series: [
-  	{
-type: 'column',
-color: '#4572A7',
-name: 'Group cumulated response time (success)',
-data: [
-  100.0
-],
-tooltip: { yDecimals: 0, ySuffix: 'ms' }
-},
-  	{
-type: 'column',
-color: '#FF0000',
-name: 'Group cumulated response time (failure)',
-data: [
-  
-],
-tooltip: { yDecimals: 0, ySuffix: 'ms' }
-}
-  ]
-});
-
-responseTimeDistributionChart.setTitle({
-  text: '<span class="chart_title">Group Cumulated Response Time Distribution</span>',
-  useHTML: true
-});
-
-var responseTimePercentiles = unpack([[1617838097,[6609,6609,6609,6609,6609,6609,6609,6609,6609,6609]],[1617838098,null],[1617838099,null],[1617838100,null],[1617838101,null],[1617838102,null],[1617838103,null]]);
-
-var responseTimeChart = new Highcharts.StockChart({
-  chart: {
-    renderTo: 'durationContainer',
-    zoomType: 'x'
-  },
-  colors: ['#C4FD90', '#7FF77F', '#6FF2AD', '#60ECE5', '#51A8E7', '#4353E2', '#7335DC', '#BC28D7', '#D11C97', '#C73905', 'Orange'],
-  credits: { enabled: false },
-  legend: {
-    enabled: true,
-    floating: true,
-    y: -65,
-    borderWidth: 0,
-    itemStyle: { fontWeight: "normal" }
-  },
-  title: { text: 'A title to let highcharts reserve the place for the title set later' },
-  navigator: { baseSeries: 9 },
   rangeSelector: {
-    rangeSelector: { align: "left" },
     buttonSpacing: 0,
     buttonTheme: {
       fill: 'LightGrey',
@@ -570,8 +582,8 @@ var responseTimeChart = new Highcharts.StockChart({
         hover: {
           fill: 'DarkGrey',
           style: { color: 'black' }
-        },
-        select: {
+         },
+         select: {
           fill: 'DarkOrange',
           style: { color: 'white' }
         }
@@ -599,6 +611,14 @@ var responseTimeChart = new Highcharts.StockChart({
     selected : 3,
     inputEnabled : false
   },
+  plotOptions: {
+    series: {
+      dataGrouping: { enabled: false }
+    },
+    area: {
+      stacking: 'normal'
+    }
+  },
   xAxis: {
     type: 'datetime',
     ordinal: false,
@@ -608,7 +628,7 @@ var responseTimeChart = new Highcharts.StockChart({
     {
       min: 0,
       title: {
-        text: 'Duration (ms)',
+        text: 'Number of requests',
         style: { color: '#4572A7' }
       },
       opposite: false
@@ -621,174 +641,239 @@ var responseTimeChart = new Highcharts.StockChart({
       opposite: true
     }
   ],
-  plotOptions: {
-    arearange: { lineWidth: 1 },
-    series: {
-      dataGrouping: { enabled: false }
-    }
-  },
   series: [
-  
-    
-         {
-pointInterval: 1000,
-name: 'min',
-data: responseTimePercentiles[0],
-tooltip: { yDecimals: 0, ySuffix: 'ms' },
-type : 'area',
-yAxis: 0,
-zIndex: 10
-},
-         {
-pointInterval: 1000,
-name: '25%',
-data: responseTimePercentiles[1],
-tooltip: { yDecimals: 0, ySuffix: 'ms' },
-type : 'area',
-yAxis: 0,
-zIndex: 9
-},
-         {
-pointInterval: 1000,
-name: '50%',
-data: responseTimePercentiles[2],
-tooltip: { yDecimals: 0, ySuffix: 'ms' },
-type : 'area',
-yAxis: 0,
-zIndex: 8
-},
-         {
-pointInterval: 1000,
-name: '75%',
-data: responseTimePercentiles[3],
-tooltip: { yDecimals: 0, ySuffix: 'ms' },
-type : 'area',
-yAxis: 0,
-zIndex: 7
-},
-         {
-pointInterval: 1000,
-name: '80%',
-data: responseTimePercentiles[4],
-tooltip: { yDecimals: 0, ySuffix: 'ms' },
-type : 'area',
-yAxis: 0,
-zIndex: 6
-},
-         {
-pointInterval: 1000,
-name: '85%',
-data: responseTimePercentiles[5],
-tooltip: { yDecimals: 0, ySuffix: 'ms' },
-type : 'area',
-yAxis: 0,
-zIndex: 5
-},
-         {
-pointInterval: 1000,
-name: '90%',
-data: responseTimePercentiles[6],
-tooltip: { yDecimals: 0, ySuffix: 'ms' },
-type : 'area',
-yAxis: 0,
-zIndex: 4
-},
-         {
-pointInterval: 1000,
-name: '95%',
-data: responseTimePercentiles[7],
-tooltip: { yDecimals: 0, ySuffix: 'ms' },
-type : 'area',
-yAxis: 0,
-zIndex: 3
-},
-         {
-pointInterval: 1000,
-name: '99%',
-data: responseTimePercentiles[8],
-tooltip: { yDecimals: 0, ySuffix: 'ms' },
-type : 'area',
-yAxis: 0,
-zIndex: 2
-},
-         {
-pointInterval: 1000,
-name: 'max',
-data: responseTimePercentiles[9],
-tooltip: { yDecimals: 0, ySuffix: 'ms' },
-type : 'area',
-yAxis: 0,
-zIndex: 1
-},
-  allUsersData
+    {
+color: '#4572A7',
+name: 'All',
+data: container_requests[0],
+tooltip: { yDecimals: 0, ySuffix: '', valueDecimals: 0 }
+,type: 'area'},
+    allUsersData
   ]
 });
 
-responseTimeChart.setTitle({
-  text: '<span class="chart_title chart_title_">Group Duration Percentiles over Time (success)</span>',
+requestsChart.setTitle({
+  text: '<span class="chart_title">Number of requests per second</span>',
   useHTML: true
 });
 
-var responseTimeDistributionChart = new Highcharts.Chart({
+var container_responses = unpack([[1617924581,[0,0, 0]],[1617924582,[0,0, 0]],[1617924583,[0,0, 0]],[1617924584,[0,0, 0]],[1617924585,[0,0, 0]],[1617924586,[0,0, 0]],[1617924587,[1,0, 1]]]);
+
+var requestsChart = new Highcharts.StockChart({
   chart: {
-    renderTo: 'durationDistributionContainer',
-    type: 'column'
+    renderTo: 'container_responses',
+    zoomType: 'x'
   },
   credits: { enabled: false },
   legend: {
     enabled: true,
     floating: true,
+    itemDistance: 10,
     y: -285,
     borderWidth: 0,
     itemStyle: { fontWeight: "normal" }
   },
   title: { text: 'A title to let highcharts reserve the place for the title set later' },
-  xAxis: {
-    categories: ['6609'],
-    tickInterval: 20
-  },
-  yAxis: {
-    min: 0,
-    title: { text: 'Percentage of Requests' }
-  },
-  tooltip: {
-    formatter: function() {
-      return '<b>'+ this.x +' ms</b><br/>'+
-      this.series.name +': '+ this.y +' %<br/>'+
-      'Total: '+ this.point.stackTotal + ' %';
-    }
+  rangeSelector: {
+    buttonSpacing: 0,
+    buttonTheme: {
+      fill: 'LightGrey',
+      padding: 1,
+      stroke: 'Black',
+      'stroke-width': 0.25,
+      style: {
+        color: 'Black',
+        fontWeight: 'bold',
+      },
+      states: {
+        stroke: 'Black',
+        'stroke-width': 0.25,
+        hover: {
+          fill: 'DarkGrey',
+          style: { color: 'black' }
+         },
+         select: {
+          fill: 'DarkOrange',
+          style: { color: 'white' }
+        }
+      }
+    },
+    buttons : [
+      {
+        type : 'minute',
+        count : 1,
+        text : '1m'
+      }, {
+        type : 'minute',
+        count : 10,
+        text : '10m'
+      }, {
+        type : 'hour',
+        count : 1,
+        text : '1h'
+      }, {
+        type : 'all',
+        count : 1,
+        text : 'All'
+      }
+    ],
+    selected : 3,
+    inputEnabled : false
   },
   plotOptions: {
     series: {
-      groupPadding: 0,
-      stacking: 'normal',
-	    shadow: true
+      dataGrouping: { enabled: false }
+    },
+    area: {
+      stacking: 'normal'
     }
   },
+  xAxis: {
+    type: 'datetime',
+    ordinal: false,
+    maxZoom: 10000 // three days
+  },
+  yAxis:[
+    {
+      min: 0,
+      title: {
+        text: 'Number of responses',
+        style: { color: '#4572A7' }
+      },
+      opposite: false
+    }, {
+      min: 0,
+      title: {
+        text: 'Active Users',
+        style: { color: '#FF9D00' }
+      },
+      opposite: true
+    }
+  ],
   series: [
-  	{
-type: 'column',
+    {
 color: '#4572A7',
-name: 'Group duration (success)',
-data: [
-  100.0
-],
-tooltip: { yDecimals: 0, ySuffix: 'ms' }
+name: 'All',
+data: container_responses[0],
+tooltip: { yDecimals: 0, ySuffix: '', valueDecimals: 0 }
 },
-  	{
-type: 'column',
+{
 color: '#FF0000',
-name: 'Group duration (failure)',
-data: [
+name: 'KO',
+data: container_responses[1],
+tooltip: { yDecimals: 0, ySuffix: '', valueDecimals: 0 }
+,type: 'area'},
+{
+color: '#A0B228',
+name: 'OK',
+data: container_responses[2],
+tooltip: { yDecimals: 0, ySuffix: '', valueDecimals: 0 }
+,type: 'area'},
+    allUsersData,
+{
   
+type: 'pie',
+name: 'Distribution',
+data: [
+  {name: 'OK', y: 1.0, color: '#A0B228'},{name: 'KO', y: 0.0, color: '#FF0000'}
 ],
-tooltip: { yDecimals: 0, ySuffix: 'ms' }
+center: [775, -40],
+size: 70,
+showInLegend: false,
+dataLabels: { enabled: false },
+dataGrouping: { enabled: false }
+
 }
+
   ]
 });
 
-responseTimeDistributionChart.setTitle({
-  text: '<span class="chart_title">Group Duration Distribution</span>',
+requestsChart.setTitle({
+  text: '<span class="chart_title">Number of responses per second</span>',
+  useHTML: true
+});
+
+var scatterChart = new Highcharts.Chart({
+  chart: {
+    renderTo: 'container_response_time_dispersion', 
+    defaultSeriesType: 'scatter',
+    zoomType: 'xy'
+  },
+  credits: { enabled: false },
+  xAxis: {
+    title: {
+      enabled: true,
+      text: 'Global number of requests per second',
+      style: { fontWeight: 'bold' }
+    },
+    startOnTick: true,
+    endOnTick: true,
+    showLastLabel: true,
+    min: 0
+  },
+  title: { text: 'A title to let highcharts reserve the place for the title set later' },
+  yAxis: {
+    min: 0,
+    title: { text: 'Response Time' }
+  },
+  tooltip: {
+    formatter: function() {
+         return ''+ this.y +' ms at ' + this.x + ' allreq/s';
+    }
+  },
+  legend: {
+    layout: 'vertical',
+    align: 'left',
+    verticalAlign: 'top',
+    x: 80,
+    y: 10,
+    floating: true,
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
+    borderRadius: 3,
+    itemStyle: {
+      fontWeight: "normal",
+      color: "#274B6D"
+    }
+  },
+  plotOptions: {
+    scatter: {
+      marker: {
+        radius: 3,
+        states: {
+          hover: {
+            enabled: true,
+            lineColor: 'rgb(100,100,100)'
+          }
+        }
+      },
+      states: {
+        hover: {
+          marker: { enabled: false }
+        }
+      }
+    }
+  },
+  series: [
+	  {
+type: 'scatter',
+color: 'rgba(69, 114, 167, .2)',
+name: 'OK',
+data: [
+[2,42]
+]},
+	  {
+type: 'scatter',
+color: 'rgba(255, 0, 0, .2)',
+name: 'KO',
+data: [
+[]
+]}
+	]
+});
+
+scatterChart.setTitle({
+  text: '<span class="chart_title">Response Time against Global RPS</span>',
   useHTML: true
 });
 
