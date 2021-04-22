@@ -17,7 +17,7 @@
 <script type="text/javascript" src="js/highcharts-more.js"></script>
 <script type="text/javascript" src="js/theme.js"></script>
 <script type="text/javascript" src="js/unpack.js"></script>
-<title>Gatling Stats - Cadastro de produto</title>
+<title>Gatling Stats - Editar produto</title>
 </head>
 <body>
 <div class="frise"></div>
@@ -37,7 +37,7 @@
                         <div class="item "><a href="index.html">GLOBAL</a></div>
                         <div class="item ouvert"><a id="details_link" href="#">DETAILS</a></div>
                         <script type="text/javascript">
-                          var timestamp = 1617924577775;
+                          var timestamp = 1619130905349;
                           var runStartHumanDate = moment(timestamp).format("YYYY-MM-DD HH:mm:ss Z");
                           document.writeln("<p class='sim_desc' title='"+ runStartHumanDate +", duration : 9 seconds' data-content=''>");
                           document.writeln("<b>" + runStartHumanDate + ", duration : 9 seconds </b>");
@@ -45,7 +45,7 @@
                         </script>
                     </div>
                     <div class="content-in">
-                        <h1><span>> </span>Cadastro de produto</h1>
+                        <h1><span>> </span>Editar produto</h1>
                         <div class="article">
                             
                         <div class="infos">
@@ -168,7 +168,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    var pageStats = stats.contents['group_cena-rio-para-a-473d9'].contents['group_cadastro-de-pro-09766'].stats;
+    var pageStats = stats.contents['group_cena-rio-para-a-473d9'].contents['group_editar-produto-b6475'].stats;
     $(document).ready(function() {
         $('.sim_desc').popover({trigger:'hover', placement:'bottom'});
         setDetailsLinkUrl();
@@ -276,7 +276,7 @@ indicatorsChart.setTitle({
 
 	    $('#container_errors').sortable('#container_errors');
     
-var responseTimePercentiles = unpack([[1617924581,null],[1617924582,null],[1617924583,null],[1617924584,null],[1617924585,null],[1617924586,null],[1617924587,[42,42,42,42,42,42,42,42,42,42]]]);
+var responseTimePercentiles = unpack([[1619130908,null],[1619130909,null],[1619130910,null],[1619130911,null],[1619130912,null],[1619130913,null],[1619130914,null]]);
 
 var responseTimeChart = new Highcharts.StockChart({
   chart: {
@@ -486,7 +486,7 @@ var responseTimeDistributionChart = new Highcharts.Chart({
   },
   title: { text: 'A title to let highcharts reserve the place for the title set later' },
   xAxis: {
-    categories: ['42'],
+    categories: [''],
     tickInterval: 20
   },
   yAxis: {
@@ -513,7 +513,7 @@ type: 'column',
 color: '#4572A7',
 name: 'Group cumulated response time (success)',
 data: [
-  100.0
+  
 ],
 tooltip: { yDecimals: 0, ySuffix: 'ms' }
 },
@@ -522,7 +522,7 @@ type: 'column',
 color: '#FF0000',
 name: 'Group cumulated response time (failure)',
 data: [
-  
+  100.0
 ],
 tooltip: { yDecimals: 0, ySuffix: 'ms' }
 }
@@ -534,7 +534,7 @@ responseTimeDistributionChart.setTitle({
   useHTML: true
 });
 
-var responseTimePercentiles = unpack([[1617924581,null],[1617924582,null],[1617924583,null],[1617924584,null],[1617924585,null],[1617924586,null],[1617924587,[405,405,405,405,405,405,405,405,405,405]]]);
+var responseTimePercentiles = unpack([[1619130908,null],[1619130909,null],[1619130910,null],[1619130911,null],[1619130912,null],[1619130913,null],[1619130914,null]]);
 
 var responseTimeChart = new Highcharts.StockChart({
   chart: {
@@ -744,7 +744,7 @@ var responseTimeDistributionChart = new Highcharts.Chart({
   },
   title: { text: 'A title to let highcharts reserve the place for the title set later' },
   xAxis: {
-    categories: ['405'],
+    categories: [''],
     tickInterval: 20
   },
   yAxis: {
@@ -771,7 +771,7 @@ type: 'column',
 color: '#4572A7',
 name: 'Group duration (success)',
 data: [
-  100.0
+  
 ],
 tooltip: { yDecimals: 0, ySuffix: 'ms' }
 },
@@ -780,7 +780,7 @@ type: 'column',
 color: '#FF0000',
 name: 'Group duration (failure)',
 data: [
-  
+  100.0
 ],
 tooltip: { yDecimals: 0, ySuffix: 'ms' }
 }

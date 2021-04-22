@@ -1,0 +1,10 @@
+RUN	br.com.cwi.simulation.LoadTestSimulation	loadtestsimulation	1619130905349	 	3.3.1
+USER	Editar um produto cadastrado	1	START	1619130908000	1619130908000
+REQUEST	1	Cenário para a Edição um produto cadastrado,Fluxo de acesso ao sistema	Api serveRest	1619130913095	1619130913307	KO	status.find.in(200,201,202,204), but actually found 401
+GROUP	1	Cenário para a Edição um produto cadastrado,Fluxo de acesso ao sistema	1619130908021	1619130913657	212	KO
+ERROR	Api Cadastro produto: Failed to build request: No attribute named 'bearer_token' is defined 	1619130913670
+GROUP	1	Cenário para a Edição um produto cadastrado,Cadastro de produto	1619130913658	1619130914031	0	KO
+ERROR	Api Editar Produto por Id.: Failed to build request: No attribute named 'idProduto' is defined 	1619130914039
+GROUP	1	Cenário para a Edição um produto cadastrado,Editar produto	1619130914032	1619130914391	0	KO
+GROUP	1	Cenário para a Edição um produto cadastrado	1619130908014	1619130914391	212	KO
+USER	Editar um produto cadastrado	1	END	1619130908000	1619130914401

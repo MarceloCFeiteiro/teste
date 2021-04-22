@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class EscreveArquivo {
 
-  private static String caminho = "C:/Users/Eshi/Downloads/gatling-load-tests-template-workshop-develop-d759f9b3dffe62bd03e37358b9b81c25f7b875ed/src/src/test/resources/bodies/login/produto.json";
+  private static String caminho = System.getProperty("user.dir").concat("/src/test/resources/bodies/login/produto.json");
 
   public static void salvaArquivo(String obj) {
     try {

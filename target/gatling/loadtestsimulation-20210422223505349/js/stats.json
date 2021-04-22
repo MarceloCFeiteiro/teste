@@ -1,0 +1,325 @@
+{
+  "type": "GROUP",
+"name": "Global Information",
+"path": "",
+"pathFormatted": "group_missing-name-b06d1",
+"stats": {
+    "name": "Global Information",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 0,
+        "ko": 1
+    },
+    "minResponseTime": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "maxResponseTime": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "meanResponseTime": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "percentiles2": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "percentiles3": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "percentiles4": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "group1": {
+    "name": "t < 800 ms",
+    "count": 0,
+    "percentage": 0
+},
+    "group2": {
+    "name": "800 ms < t < 1200 ms",
+    "count": 0,
+    "percentage": 0
+},
+    "group3": {
+    "name": "t > 1200 ms",
+    "count": 0,
+    "percentage": 0
+},
+    "group4": {
+    "name": "failed",
+    "count": 1,
+    "percentage": 100
+},
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.14285714285714285,
+        "ok": 0,
+        "ko": 0.14285714285714285
+    }
+},
+"contents": {
+"group_cena-rio-para-a-473d9": {
+          "type": "GROUP",
+"name": "Cenário para a Edição um produto cadastrado",
+"path": "Cenário para a Edição um produto cadastrado",
+"pathFormatted": "group_cena-rio-para-a-473d9",
+"stats": {
+    "name": "Cenário para a Edição um produto cadastrado",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 0,
+        "ko": 1
+    },
+    "minResponseTime": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "maxResponseTime": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "meanResponseTime": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "percentiles2": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "percentiles3": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "percentiles4": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "group1": {
+    "name": "t < 800 ms",
+    "count": 0,
+    "percentage": 0
+},
+    "group2": {
+    "name": "800 ms < t < 1200 ms",
+    "count": 0,
+    "percentage": 0
+},
+    "group3": {
+    "name": "t > 1200 ms",
+    "count": 0,
+    "percentage": 0
+},
+    "group4": {
+    "name": "failed",
+    "count": 1,
+    "percentage": 100
+},
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.14285714285714285,
+        "ok": 0,
+        "ko": 0.14285714285714285
+    }
+},
+"contents": {
+"group_fluxo-de-acesso-20e4c": {
+          "type": "GROUP",
+"name": "Fluxo de acesso ao sistema",
+"path": "Cenário para a Edição um produto cadastrado / Fluxo de acesso ao sistema",
+"pathFormatted": "group_cena-rio-para-a-df809",
+"stats": {
+    "name": "Fluxo de acesso ao sistema",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 0,
+        "ko": 1
+    },
+    "minResponseTime": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "maxResponseTime": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "meanResponseTime": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "percentiles2": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "percentiles3": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "percentiles4": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "group1": {
+    "name": "t < 800 ms",
+    "count": 0,
+    "percentage": 0
+},
+    "group2": {
+    "name": "800 ms < t < 1200 ms",
+    "count": 0,
+    "percentage": 0
+},
+    "group3": {
+    "name": "t > 1200 ms",
+    "count": 0,
+    "percentage": 0
+},
+    "group4": {
+    "name": "failed",
+    "count": 1,
+    "percentage": 100
+},
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.14285714285714285,
+        "ok": 0,
+        "ko": 0.14285714285714285
+    }
+},
+"contents": {
+"req_api-serverest-bb3e7": {
+        "type": "REQUEST",
+        "name": "Api serveRest",
+"path": "Cenário para a Edição um produto cadastrado / Fluxo de acesso ao sistema / Api serveRest",
+"pathFormatted": "req_cena-rio-para-a-9cac6",
+"stats": {
+    "name": "Api serveRest",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 0,
+        "ko": 1
+    },
+    "minResponseTime": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "maxResponseTime": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "meanResponseTime": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "percentiles2": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "percentiles3": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "percentiles4": {
+        "total": 212,
+        "ok": 0,
+        "ko": 212
+    },
+    "group1": {
+    "name": "t < 800 ms",
+    "count": 0,
+    "percentage": 0
+},
+    "group2": {
+    "name": "800 ms < t < 1200 ms",
+    "count": 0,
+    "percentage": 0
+},
+    "group3": {
+    "name": "t > 1200 ms",
+    "count": 0,
+    "percentage": 0
+},
+    "group4": {
+    "name": "failed",
+    "count": 1,
+    "percentage": 100
+},
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.14285714285714285,
+        "ok": 0,
+        "ko": 0.14285714285714285
+    }
+}
+    }
+}
+
+     }
+}
+
+     }
+}
+
+}
