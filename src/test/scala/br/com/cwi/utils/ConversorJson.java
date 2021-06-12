@@ -7,7 +7,7 @@ public  class ConversorJson {
 
   public static String EntidadeParaJson(Object obj){
 
-    System.out.println(new Gson().toJson(obj));
+    //System.out.println(new Gson().toJson(obj));
 
    return new Gson().toJson(obj);
 

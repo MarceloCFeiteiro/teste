@@ -6,6 +6,8 @@ import io.gatling.core.Predef.{exec, _}
 import io.gatling.core.structure.ChainBuilder
 import io.gatling.http.Predef._
 
+// Classe responsávelp or armazenar os métodos da api de produtos.
+
 object ApiProdutos {
 
   def CadastrarProduto() = {

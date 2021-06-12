@@ -1,7 +1,7 @@
 package br.com.cwi.simulation
 
 import br.com.cwi.model.Produto
-import br.com.cwi.utils.{Config, ConversorJson, SessionKeys, Utils, EscreveArquivo}
+import br.com.cwi.utils.{Config, ConversorJson, SessionKeys, Utils, ManipularArquivo}
 import io.gatling.core.Predef._
 
 /**
@@ -27,7 +27,7 @@ class BaseSimulation extends Simulation {
 
 
   before {
-    EscreveArquivo.salvaArquivo(ConversorJson.EntidadeParaJson(Produto.criaProduto()))
+    ManipularArquivo.salvaArquivo(ConversorJson.EntidadeParaJson(Produto.criaProduto()))
     println("================================================================================")
     println("Iniciando os testes de carga, utilizando as seguintes configurações:")
     println(s"Execução")
